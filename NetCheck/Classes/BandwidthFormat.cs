@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace iTuner
+namespace NNSClass
 {
     public static class BandwidthFormat
     {
