@@ -9,6 +9,7 @@
 // Revision : 0
 // Edit history
 // Rev 0: //th20210121 Initial this unit.
+// Rev 1: //th20210121 Fix small bugs.
 // *******************************************************************
 using System;
 using System.Drawing;
@@ -36,7 +37,7 @@ namespace NetCheck
 			nwStatus.AvailabilityChanged +=
 				new NetworkStatusChangedHandler(DoAvailabilityChanged);
 
-			loadConfigToControl();
+			//th20210121 ไม่จำเป็นมั้ง loadConfigToControl();
 		}
 
         #region Form Events
@@ -120,7 +121,7 @@ namespace NetCheck
 			this.ShowInTaskbar = false;
 			this.Hide();
 			this.notifyIcon1.Visible = true;
-			this.notifyIcon1.ShowBalloonTip(100, "Status", "Program is running in the background...", ToolTipIcon.Info);
+			//th20210121 เยอะไป ไม่แสดงเลยดีกว่า this.notifyIcon1.ShowBalloonTip(100, "Status", "Program is running in the background...", ToolTipIcon.Info);
 
 			saveConfigFromControl();
 			destroyPasswordInControl();
@@ -129,15 +130,17 @@ namespace NetCheck
 		{
 			loadConfigToControl();
 			this.Show();
+			this.ShowInTaskbar = true; //th20210121 show in taskbar when show config
 			this.WindowState = FormWindowState.Normal;
 		}
 		private void changeAdapterOptions()
         {
-			System.Diagnostics.Process.Start("rundthepxexe".DecryptSystemString(), "shethepxdll,ContOrnBNKunDLL ncp48pl,,1".DecryptSystemString().Replace("OrnBNK", "rol_R").Replace("48", "a.c"));
+			System.Diagnostics.Process.Start("rundll32.exe", "shell32.dll,Control_RunDLL ncpa.cpl,,1");
 		}
 		private void destroyPasswordInControl()
 		{
 			tbPassword.Text = "";
+			configDirty = false;
 		}
 		private void loadConfigToControl()
 		{
@@ -214,6 +217,7 @@ namespace NetCheck
 			ReportAvailability(); //must be out of if to show the status
 		}
 		#endregion
+
 		#region Network Checking....
 		/// <summary>
 		/// Event handler used to capture availability changes.
