@@ -26,5 +26,8 @@
     <Setting Name="SmtpPort" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
+    <Setting Name="TrayIconColor" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Yellow</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

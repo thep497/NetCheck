@@ -118,5 +118,17 @@ namespace NetCheck.Properties {
                 this["SmtpPort"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Yellow")]
+        public string TrayIconColor {
+            get {
+                return ((string)(this["TrayIconColor"]));
+            }
+            set {
+                this["TrayIconColor"] = value;
+            }
+        }
     }
 }

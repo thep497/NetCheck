@@ -51,18 +51,26 @@ namespace NNSClass
                        !string.IsNullOrWhiteSpace(subject);
             }
         }
-        public void SendMail()
+        public bool SendMail()
         {
-            SmtpClient client = new SmtpClient(smtpServer,smtpPort);
-            client.UseDefaultCredentials = false;
-            client.Credentials = new NetworkCredential(username, password);
+            try
+            {
+                SmtpClient client = new SmtpClient(smtpServer, smtpPort);
+                client.UseDefaultCredentials = false;
+                client.Credentials = new NetworkCredential(username, password);
 
-            MailMessage mailMessage = new MailMessage();
-            mailMessage.From = new MailAddress(mailFrom);
-            mailMessage.To.Add(mailTo);
-            mailMessage.Subject = subject;
-            mailMessage.Body = body;
-            client.Send(mailMessage);
+                MailMessage mailMessage = new MailMessage();
+                mailMessage.From = new MailAddress(mailFrom);
+                mailMessage.To.Add(mailTo);
+                mailMessage.Subject = subject;
+                mailMessage.Body = body;
+                client.Send(mailMessage);
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

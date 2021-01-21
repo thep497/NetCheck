@@ -71,6 +71,26 @@ namespace NetCheck.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon ConnectedB {
+            get {
+                object obj = ResourceManager.GetObject("ConnectedB", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon ConnectedW {
+            get {
+                object obj = ResourceManager.GetObject("ConnectedW", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap data_configuration_64 {
@@ -86,6 +106,26 @@ namespace NetCheck.Properties {
         internal static System.Drawing.Icon Disconnected {
             get {
                 object obj = ResourceManager.GetObject("Disconnected", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon DisconnectedB {
+            get {
+                object obj = ResourceManager.GetObject("DisconnectedB", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon DisconnectedW {
+            get {
+                object obj = ResourceManager.GetObject("DisconnectedW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
             }
         }
