@@ -49,13 +49,13 @@ namespace NNSClass
         {
             get
             {
-                return !string.IsNullOrWhiteSpace(smtpServer) &&
+                return !string.IsNullOrEmpty(smtpServer) &&
                        smtpPort > 0 && 
-                       !string.IsNullOrWhiteSpace(username) &&
-                       !string.IsNullOrWhiteSpace(password) &&
-                       !string.IsNullOrWhiteSpace(mailFrom) &&
-                       !string.IsNullOrWhiteSpace(mailTo) &&
-                       !string.IsNullOrWhiteSpace(subject);
+                       !string.IsNullOrEmpty(username) &&
+                       !string.IsNullOrEmpty(password) &&
+                       !string.IsNullOrEmpty(mailFrom) &&
+                       !string.IsNullOrEmpty(mailTo) &&
+                       !string.IsNullOrEmpty(subject);
             }
         }
         public bool SendMail()
