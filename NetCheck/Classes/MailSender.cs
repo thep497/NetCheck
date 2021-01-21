@@ -1,10 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// *******************************************************************
+//1. Program Name:	NetCheck
+//2. Module Name:	Class
+//3. Unit Name:		MailSender
+//4. Programmer:	thep497
+//5. Create date:	20210121
+//6. Description:	Class to send an e-mail
+// *******************************************************************
+// Revision : 0
+// Edit history
+// Rev 0: //th20210121 Initial this unit.
+// *******************************************************************
 using System.Net;
 using System.Net.Mail;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace NNSClass
 {

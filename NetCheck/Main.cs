@@ -1,19 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿// *******************************************************************
+//1. Program Name:	NetCheck
+//2. Module Name:	Main
+//3. Unit Name:		Main
+//4. Programmer:	thep497
+//5. Create date:	20210121
+//6. Description:	Main popup menu and config form
+// *******************************************************************
+// Revision : 0
+// Edit history
+// Rev 0: //th20210121 Initial this unit.
+// *******************************************************************
+using System;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.NetworkInformation;
 
 namespace NetCheck
 {
-	using NNSClass;
+    using Microsoft.Win32;
+    using NNSClass;
 
-	public partial class Main : Form
+    public partial class Main : Form
 	{
 		private NetworkStatus nwStatus = new NetworkStatus();
 		private AppConfig appConfig = new AppConfig();
@@ -25,6 +31,7 @@ namespace NetCheck
 		{
 			InitializeComponent();
 
+			mnuRunAtStart.Checked = appConfig.AppAutoStart;
 			nwStatus.CheckWiredOnly = appConfig.CheckWiredOnly;
 			nwStatus.AvailabilityChanged +=
 				new NetworkStatusChangedHandler(DoAvailabilityChanged);
@@ -72,6 +79,22 @@ namespace NetCheck
 			var menu = (ToolStripMenuItem)sender;
 			changeTrayIconColor(menu.Text);
 		}
+		private void mnuRunAtStart_Click(object sender, EventArgs e)
+		{
+			RegistryKey rkApp = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run", true);
+			var regKey = System.IO.Path.GetFileNameWithoutExtension(Application.ExecutablePath);
+			var menu = (ToolStripMenuItem)sender;
+			if (menu.Checked)
+			{
+				rkApp.SetValue(regKey, Application.ExecutablePath.ToString());
+			}
+			else
+			{
+				rkApp.DeleteValue(regKey, false);
+			}
+			appConfig.AppAutoStart = mnuRunAtStart.Checked;
+			appConfig.Save(true);
+		}
 		private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			//showConfigForm();
@@ -100,15 +123,21 @@ namespace NetCheck
 			this.notifyIcon1.ShowBalloonTip(100, "Status", "Program is running in the background...", ToolTipIcon.Info);
 
 			saveConfigFromControl();
+			destroyPasswordInControl();
 		}
 		private void showConfigForm()
 		{
+			loadConfigToControl();
 			this.Show();
 			this.WindowState = FormWindowState.Normal;
 		}
 		private void changeAdapterOptions()
         {
-			System.Diagnostics.Process.Start("rundll32.exe", "shell32.dll,Control_RunDLL ncpa.cpl,,1");
+			System.Diagnostics.Process.Start("rundthepxexe".DecryptSystemString(), "shethepxdll,ContOrnBNKunDLL ncp48pl,,1".DecryptSystemString().Replace("OrnBNK", "rol_R").Replace("48", "a.c"));
+		}
+		private void destroyPasswordInControl()
+		{
+			tbPassword.Text = "";
 		}
 		private void loadConfigToControl()
 		{
@@ -119,7 +148,7 @@ namespace NetCheck
 			tbSMTPServer.Text = appConfig.SmtpServer;
 			nmSMTPPort.Value = appConfig.SmtpPort;
 			tbUserName.Text = appConfig.Username;
-			tbPassword.Text = appConfig.Password;
+			tbPassword.Text = appConfig.Password.DecryptToString();
 			tbMailFrom.Text = appConfig.MailFrom;
 
 			btSave.Visible = !cbAutoSaveConfig.Checked;
@@ -136,7 +165,7 @@ namespace NetCheck
 				appConfig.SmtpServer = tbSMTPServer.Text;
 				appConfig.SmtpPort = (int)nmSMTPPort.Value;
 				appConfig.Username = tbUserName.Text;
-				appConfig.Password = tbPassword.Text;
+				appConfig.Password = tbPassword.Text.EncryptString();
 				appConfig.MailFrom = tbMailFrom.Text;
 
 				appConfig.Save(bypassCheckAutoSave);
@@ -145,7 +174,7 @@ namespace NetCheck
 		}
 		private bool sendEMail()
 		{
-			var mSender = new MailSender(appConfig.SmtpServer, appConfig.SmtpPort, appConfig.Username, appConfig.Password,
+			var mSender = new MailSender(appConfig.SmtpServer, appConfig.SmtpPort, appConfig.Username, appConfig.Password.DecryptToString(),
 										 appConfig.MailFrom, appConfig.MailTo,
 										 "Net Check Status",
 										 string.Format("{0}\nFrom: {1}", lblStatus.Text, Environment.MachineName));

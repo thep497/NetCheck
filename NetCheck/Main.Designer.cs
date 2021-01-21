@@ -36,6 +36,7 @@ namespace NetCheck
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuChangeAdapterOptions = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfig = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuRunAtStart = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuTrayIconColor = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuWhite = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuBlack = new System.Windows.Forms.ToolStripMenuItem();
@@ -79,11 +80,12 @@ namespace NetCheck
             this.toolStripSeparator1,
             this.mnuChangeAdapterOptions,
             this.mnuConfig,
+            this.mnuRunAtStart,
             this.mnuTrayIconColor,
             this.toolStripSeparator2,
             this.mnuExit});
             this.popupMenu.Name = "contextMenuStrip1";
-            this.popupMenu.Size = new System.Drawing.Size(251, 156);
+            this.popupMenu.Size = new System.Drawing.Size(251, 184);
             // 
             // mnuAppName
             // 
@@ -115,6 +117,14 @@ namespace NetCheck
             this.mnuConfig.Size = new System.Drawing.Size(250, 28);
             this.mnuConfig.Text = "Config";
             this.mnuConfig.Click += new System.EventHandler(this.mnuConfig_Click);
+            // 
+            // mnuRunAtStart
+            // 
+            this.mnuRunAtStart.CheckOnClick = true;
+            this.mnuRunAtStart.Name = "mnuRunAtStart";
+            this.mnuRunAtStart.Size = new System.Drawing.Size(250, 28);
+            this.mnuRunAtStart.Text = "Run at start";
+            this.mnuRunAtStart.Click += new System.EventHandler(this.mnuRunAtStart_Click);
             // 
             // mnuTrayIconColor
             // 
@@ -450,6 +460,7 @@ namespace NetCheck
         private System.Windows.Forms.ToolStripMenuItem mnuWhite;
         private System.Windows.Forms.ToolStripMenuItem mnuBlack;
         private System.Windows.Forms.ToolStripMenuItem mnuYellow;
+        private System.Windows.Forms.ToolStripMenuItem mnuRunAtStart;
     }
 }
 

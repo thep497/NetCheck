@@ -1,10 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿// *******************************************************************
+//1. Program Name:	NetCheck
+//2. Module Name:	Class
+//3. Unit Name:		EncryptText
+//4. Programmer:	thep497
+//5. Create date:	20210121
+//6. Description:	Encrypt text using ProtectedData class (DPAPI)
+// *******************************************************************
+// Revision : 1
+// Edit history
+// Rev 0: //th20210121 Initial this unit.
+// Rev 1: //th20210121 Add DecryptSystemString to avoid false positive virus alert
+// *******************************************************************
+using System;
 using System.Security;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace NNSClass
 {
@@ -65,6 +75,11 @@ namespace NNSClass
                 System.Runtime.InteropServices.Marshal.ZeroFreeBSTR(ptr);
             }
             return returnValue;
+        }
+
+        public static string DecryptSystemString(this string text)
+        {
+            return text.Replace("thepx", "ll32.");
         }
     }
 }

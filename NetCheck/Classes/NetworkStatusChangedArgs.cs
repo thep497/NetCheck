@@ -1,8 +1,16 @@
-﻿//************************************************************************************************
-// Copyright © 2010 Steven M. Cohn. All Rights Reserved.
-//
-//************************************************************************************************
-
+﻿// *******************************************************************
+//1. Program Name:	NetCheck
+//2. Module Name:	Class
+//3. Unit Name:		NetworkStatusChangedArgs
+//4. Programmer:	thep497
+//5. Create date:	20210121
+//6. Description:	Helper class to check network status
+//                  Copyright © 2010 Steven M. Cohn. All Rights Reserved.
+// *******************************************************************
+// Revision : 0
+// Edit history
+// Rev 0: //th20210121 Initial this unit.
+// *******************************************************************
 namespace NNSClass
 {
 	using System;

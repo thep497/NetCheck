@@ -1,6 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿// *******************************************************************
+//1. Program Name:	NetCheck
+//2. Module Name:	Class
+//3. Unit Name:		BandwidthFormat
+//4. Programmer:	thep497
+//5. Create date:	20210121
+//6. Description:	Extension function to format bandwith number to string (using the prefix Kbps, Mbps, Gbps, etc.)
+// *******************************************************************
+// Revision : 0
+// Edit history
+// Rev 0: //th20210121 Initial this unit.
+// *******************************************************************
+using System;
 
 namespace NNSClass
 {
