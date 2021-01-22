@@ -1,0 +1,5 @@
+กรณีต้องการให้รวมเป็นไฟล์ใหญ่ ๆ ไฟล์เดียว ไม่ต้องให้ download .Net framework ให้สั่งตามนี้ (ทำหลังจาก build Release ใน VS แล้ว ไม่งั้นจะ error)
+dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
+
+ถ้าเอา /p:PublishReadyToRun=true ออก ไฟล์จะเล็กลง (แต่น่าจะเริ่ม start ช้าลงด้วยมั้ง)
+dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=true

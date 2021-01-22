@@ -4,7 +4,7 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0-windows</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>Resources\ethernet-on-multi-size(1).ico</ApplicationIcon>
+    <ApplicationIcon>Resources\ethernet-on-64-b.ico</ApplicationIcon>
     <Authors>Amornthep L.</Authors>
     <Company>Neo-Net Soft</Company>
     <Version>1.0.1</Version>

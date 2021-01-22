@@ -60,7 +60,7 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Resources\ethernet-on-multi-size.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\ethernet-on-64-y.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -124,6 +124,8 @@
     <Content Include="Resources\data-configuration-64.png" />
     <Content Include="Resources\ethernet-off-64%281%29.ico" />
     <Content Include="Resources\ethernet-off-64.ico" />
+    <Content Include="Resources\ethernet-on-64-b.ico" />
+    <Content Include="Resources\ethernet-on-64-y.ico" />
     <Content Include="Resources\ethernet-on-64.png" />
     <Content Include="Resources\ethernet-on-multi-size%281%29.ico" />
     <Content Include="Resources\ethernet-on-multi-size.ico" />
@@ -137,7 +139,6 @@
     <Content Include="Resources\NetDisconnect.ico" />
     <Content Include="Resources\network-64%281%29.ico" />
     <Content Include="Resources\Oxygen-Icons.org-Oxygen-Actions-network-connect.ico" />
-    <Content Include="Resources\Oxygen-Icons.org-Oxygen-Actions-network-connect1.ico" />
     <Content Include="Resources\window-5-64%281%29.ico" />
     <Content Include="Resources\window-5-64-bk.ico" />
     <Content Include="Resources\window-5-64.ico" />

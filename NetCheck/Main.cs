@@ -175,11 +175,11 @@ namespace NetCheck
 			}
 			configDirty = false;
 		}
-		private bool sendEMail()
+		private bool sendEMail(bool IsAvailable)
 		{
 			var mSender = new MailSender(appConfig.SmtpServer, appConfig.SmtpPort, appConfig.Username, appConfig.Password.DecryptToString(),
 										 appConfig.MailFrom, appConfig.MailTo,
-										 "Net Check Status",
+										 string.Format("Net Check Status ({0})",IsAvailable ? "Connected" : "Disconnected"),
 										 string.Format("{0}\nFrom: {1}", lblStatus.Text, Environment.MachineName));
 			if (mSender.CanSendMail)
 				return mSender.SendMail();
@@ -256,7 +256,7 @@ namespace NetCheck
 				if (notifyIcon1.Text != "")
 				{
 					notifyIcon1.ShowBalloonTip(100, "Network", "Network status changed to:\n" + networkStatusString, nwStatus.IsAvailable ? ToolTipIcon.Info : ToolTipIcon.Warning);
-					if (!sendEMail())
+					if (!sendEMail(nwStatus.IsAvailable))
 						notifyIcon1.ShowBalloonTip(100, "e-Mail", "Sending mail failed...", ToolTipIcon.Warning);
 				}
 				notifyIcon1.Text = networkStatusString;
