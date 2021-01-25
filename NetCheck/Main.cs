@@ -6,18 +6,20 @@
 //5. Create date:	20210121
 //6. Description:	Main popup menu and config form
 // *******************************************************************
-// Revision : 0
+// Revision : 2
 // Edit history
 // Rev 0: //th20210121 Initial this unit.
 // Rev 1: //th20210121 Fix small bugs.
+// Rev 2: //th20210125 เพิ่มการ save log
 // *******************************************************************
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Microsoft.Win32;
+using System.Configuration;
 
 namespace NetCheck
 {
-    using Microsoft.Win32;
     using NNSClass;
 
     public partial class Main : Form
@@ -25,7 +27,7 @@ namespace NetCheck
 		private NetworkStatus nwStatus = new NetworkStatus();
 		private AppConfig appConfig = new AppConfig();
 		private bool _configDirty = false;
-
+		private Logger log;
 		private bool configDirty { get => _configDirty; set { _configDirty = lblDirty.Visible = value; } }
 
 		public Main()
@@ -37,12 +39,18 @@ namespace NetCheck
 			nwStatus.AvailabilityChanged +=
 				new NetworkStatusChangedHandler(DoAvailabilityChanged);
 
+			var config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.PerUserRoamingAndLocal);
+			log = new Logger(typeof(Main), System.IO.Path.GetDirectoryName(config.FilePath)); 
 			//th20210121 ไม่จำเป็นมั้ง loadConfigToControl();
 		}
 
         #region Form Events
         private void Main_Load(object sender, EventArgs e)
 		{
+			//XmlConfigurator.Configure(new System.IO.FileInfo(@"log4net.config"));
+			log.Active = appConfig.SaveLog;
+			log.Log("App started.");
+
 			changeTrayIconColor(appConfig.TrayIconColor); //ReportAvailability();
 
 			this.WindowState = FormWindowState.Minimized;
@@ -64,6 +72,7 @@ namespace NetCheck
 		private void mnuExit_Click(object sender, EventArgs e)
 		{
 			saveConfigFromControl();
+			log.Log("App exited.");
 			Application.Exit();
 		}
 
@@ -96,6 +105,16 @@ namespace NetCheck
 			appConfig.AppAutoStart = mnuRunAtStart.Checked;
 			appConfig.Save(true);
 		}
+		private void mnuAbout_Click(object sender, EventArgs e)
+		{
+			AboutBox1 a = new AboutBox1();
+			a.ShowDialog();
+		}
+		private void mnuShowLog_Click(object sender, EventArgs e)
+		{
+			showLog();
+		}
+
 		private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			//showConfigForm();
@@ -137,6 +156,11 @@ namespace NetCheck
         {
 			System.Diagnostics.Process.Start("rundll32.exe", "shell32.dll,Control_RunDLL ncpa.cpl,,1");
 		}
+		private void showLog()
+		{
+			System.Diagnostics.Process.Start("notepad.exe", log.LogFileName);
+		}
+
 		private void destroyPasswordInControl()
 		{
 			tbPassword.Text = "";
@@ -144,6 +168,7 @@ namespace NetCheck
 		}
 		private void loadConfigToControl()
 		{
+			cbSaveLog.Checked = appConfig.SaveLog; //th20210125 เพิ่มการ save log
 			cbAutoSaveConfig.Checked = appConfig.AutoSaveConfig;
 			cbWiredOnly.Checked = appConfig.CheckWiredOnly;
 			tbMailTo.Text = appConfig.MailTo;
@@ -161,6 +186,7 @@ namespace NetCheck
 		{
 			if (configDirty) // || bypassCheckAutoSave ไม่น่าจะต้องมี ถ้าไม่มีแก้จะ save ทำไม
 			{
+				appConfig.SaveLog = cbSaveLog.Checked; //th20210125 เพิ่มการ save log
 				appConfig.AutoSaveConfig = cbAutoSaveConfig.Checked;
 				appConfig.CheckWiredOnly = cbWiredOnly.Checked;
 				appConfig.MailTo = tbMailTo.Text;
@@ -172,6 +198,9 @@ namespace NetCheck
 				appConfig.MailFrom = tbMailFrom.Text;
 
 				appConfig.Save(bypassCheckAutoSave);
+
+				log.Active = appConfig.SaveLog;
+				log.Log("Config saved.");
 			}
 			configDirty = false;
 		}
@@ -256,18 +285,21 @@ namespace NetCheck
 				if (notifyIcon1.Text != "")
 				{
 					notifyIcon1.ShowBalloonTip(100, "Network", "Network status changed to:\n" + networkStatusString, nwStatus.IsAvailable ? ToolTipIcon.Info : ToolTipIcon.Warning);
+					log.Log("Network status changed to: " + networkStatusString, nwStatus.IsAvailable ? Logger.LogLevel.Info : Logger.LogLevel.Warn);
 					if (!sendEMail(nwStatus.IsAvailable))
+					{
 						notifyIcon1.ShowBalloonTip(100, "e-Mail", "Sending mail failed...", ToolTipIcon.Warning);
+						log.Log("Sending mail failed...",Logger.LogLevel.Error);
+					}
 				}
 				notifyIcon1.Text = networkStatusString;
 			}
 		}
 
-		private void DelegateMethod(string myText)
+        private void DelegateMethod(string myText)
 		{
 			lblStatus.Text = myText;
 		}
         #endregion
-
     }
 }

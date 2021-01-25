@@ -154,5 +154,17 @@ namespace NetCheck.Properties {
                 this["AppAutoStart"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool SaveLog {
+            get {
+                return ((bool)(this["SaveLog"]));
+            }
+            set {
+                this["SaveLog"] = value;
+            }
+        }
     }
 }

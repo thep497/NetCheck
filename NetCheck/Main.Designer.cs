@@ -42,7 +42,10 @@ namespace NetCheck
             this.mnuBlack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuYellow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuShowLog = new System.Windows.Forms.ToolStripMenuItem();
             this.lblStatus = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.pnlConfig = new System.Windows.Forms.Panel();
@@ -65,6 +68,7 @@ namespace NetCheck
             this.tbMailTo = new System.Windows.Forms.TextBox();
             this.cbAutoSaveConfig = new System.Windows.Forms.CheckBox();
             this.cbWiredOnly = new System.Windows.Forms.CheckBox();
+            this.cbSaveLog = new System.Windows.Forms.CheckBox();
             this.popupMenu.SuspendLayout();
             this.pnlConfig.SuspendLayout();
             this.pnlSMTP.SuspendLayout();
@@ -83,6 +87,9 @@ namespace NetCheck
             this.mnuRunAtStart,
             this.mnuTrayIconColor,
             this.toolStripSeparator2,
+            this.mnuShowLog,
+            this.mnuAbout,
+            this.toolStripSeparator3,
             this.mnuExit});
             this.popupMenu.Name = "contextMenuStrip1";
             this.popupMenu.Size = new System.Drawing.Size(251, 184);
@@ -167,6 +174,11 @@ namespace NetCheck
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(247, 6);
             // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(247, 6);
+            // 
             // mnuExit
             // 
             this.mnuExit.Image = ((System.Drawing.Image)(resources.GetObject("mnuExit.Image")));
@@ -174,6 +186,20 @@ namespace NetCheck
             this.mnuExit.Size = new System.Drawing.Size(250, 28);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
+            // 
+            // mnuAbout
+            // 
+            this.mnuAbout.Name = "mnuAbout";
+            this.mnuAbout.Size = new System.Drawing.Size(250, 28);
+            this.mnuAbout.Text = "About";
+            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
+            // 
+            // mnuShowLog
+            // 
+            this.mnuShowLog.Name = "mnuShowLog";
+            this.mnuShowLog.Size = new System.Drawing.Size(250, 28);
+            this.mnuShowLog.Text = "ShowLog";
+            this.mnuShowLog.Click += new System.EventHandler(this.mnuShowLog_Click);
             // 
             // lblStatus
             // 
@@ -345,6 +371,7 @@ namespace NetCheck
             this.pnlConfig1.Controls.Add(this.tbMailTo);
             this.pnlConfig1.Controls.Add(this.cbAutoSaveConfig);
             this.pnlConfig1.Controls.Add(this.cbWiredOnly);
+            this.pnlConfig1.Controls.Add(this.cbSaveLog);
             this.pnlConfig1.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlConfig1.Location = new System.Drawing.Point(0, 0);
             this.pnlConfig1.Name = "pnlConfig1";
@@ -401,6 +428,17 @@ namespace NetCheck
             this.cbWiredOnly.UseVisualStyleBackColor = true;
             this.cbWiredOnly.CheckStateChanged += new System.EventHandler(this.tbMailTo_TextChanged);
             // 
+            // cbSaveLog
+            // 
+            this.cbSaveLog.AutoSize = true;
+            this.cbSaveLog.Location = new System.Drawing.Point(190, 10);
+            this.cbSaveLog.Name = "cbSaveLog";
+            this.cbSaveLog.Size = new System.Drawing.Size(100, 24);
+            this.cbSaveLog.TabIndex = 2;
+            this.cbSaveLog.Text = "Save log file";
+            this.cbSaveLog.UseVisualStyleBackColor = true;
+            this.cbSaveLog.CheckStateChanged += new System.EventHandler(this.tbMailTo_TextChanged);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -430,11 +468,14 @@ namespace NetCheck
         private System.Windows.Forms.ContextMenuStrip popupMenu;
         private System.Windows.Forms.ToolStripMenuItem mnuConfig;
         private System.Windows.Forms.ToolStripMenuItem mnuExit;
+        private System.Windows.Forms.ToolStripMenuItem mnuAbout;
+        private System.Windows.Forms.ToolStripMenuItem mnuShowLog;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.NotifyIcon notifyIcon1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mnuChangeAdapterOptions;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem mnuAppName;
         private System.Windows.Forms.Panel pnlConfig;
         private System.Windows.Forms.Panel pnlSMTP;
@@ -452,6 +493,7 @@ namespace NetCheck
         private System.Windows.Forms.TextBox tbMailTo;
         private System.Windows.Forms.CheckBox cbAutoSaveConfig;
         private System.Windows.Forms.CheckBox cbWiredOnly;
+        private System.Windows.Forms.CheckBox cbSaveLog;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown nmSMTPPort;

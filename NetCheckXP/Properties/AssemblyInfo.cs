@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Neo-Net Soft")]
 [assembly: AssemblyProduct("NetCheckXP")]
-[assembly: AssemblyCopyright("Copyright ©  2021 Neo-Net Soft Co., Ltd. All rights reserved.")]
+[assembly: AssemblyCopyright("©  2021 Neo-Net Soft Co., Ltd. All rights reserved.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

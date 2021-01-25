@@ -6,9 +6,10 @@
 //5. Create date:	20210121
 //6. Description:	Manage the program setting, using user.config (Properties.Settings.Default)
 // *******************************************************************
-// Revision : 0
+// Revision : 1
 // Edit history
 // Rev 0: //th20210121 Initial this unit.
+// Rev 1: //th20210125 เพิ่มการ save log
 // *******************************************************************
 namespace NNSClass
 {
@@ -17,6 +18,7 @@ namespace NNSClass
         public bool AppAutoStart { get => NetCheck.Properties.Settings.Default.AppAutoStart; set => NetCheck.Properties.Settings.Default.AppAutoStart = value; }
         public bool AutoSaveConfig { get => NetCheck.Properties.Settings.Default.AutoSaveConfig; set => NetCheck.Properties.Settings.Default.AutoSaveConfig = value; }
         public bool CheckWiredOnly { get => NetCheck.Properties.Settings.Default.CheckWiredOnly; set => NetCheck.Properties.Settings.Default.CheckWiredOnly = value; }
+        public bool SaveLog { get => NetCheck.Properties.Settings.Default.SaveLog; set => NetCheck.Properties.Settings.Default.SaveLog = value; }
         public string TrayIconColor { get => NetCheck.Properties.Settings.Default.TrayIconColor; set => NetCheck.Properties.Settings.Default.TrayIconColor = value; }
 
         public string SmtpServer { get => NetCheck.Properties.Settings.Default.SmtpServer; set => NetCheck.Properties.Settings.Default.SmtpServer = value; }

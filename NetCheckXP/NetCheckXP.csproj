@@ -63,9 +63,14 @@
     <ApplicationIcon>Resources\ethernet-on-64-y.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net35\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
@@ -75,6 +80,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\NetCheck\AboutBox1.cs">
+      <Link>AboutBox1.cs</Link>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="..\NetCheck\AboutBox1.Designer.cs">
+      <Link>AboutBox1.Designer.cs</Link>
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
     <Compile Include="..\NetCheck\Classes\AppConfig.cs">
       <Link>Classes\AppConfig.cs</Link>
     </Compile>
@@ -83,6 +96,9 @@
     </Compile>
     <Compile Include="..\NetCheck\Classes\EncryptText.cs">
       <Link>Classes\EncryptText.cs</Link>
+    </Compile>
+    <Compile Include="..\NetCheck\Classes\Logger.cs">
+      <Link>Classes\Logger.cs</Link>
     </Compile>
     <Compile Include="..\NetCheck\Classes\MailSender.cs">
       <Link>Classes\MailSender.cs</Link>
@@ -111,6 +127,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="..\NetCheck\AboutBox1.resx">
+      <Link>AboutBox1.resx</Link>
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="..\NetCheck\Main.resx">
       <Link>Main.resx</Link>
       <DependentUpon>Main.cs</DependentUpon>
@@ -146,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="NetCheckXP_TemporaryKey.pfx" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">

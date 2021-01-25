@@ -3,3 +3,5 @@ dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeNativeL
 
 ถ้าเอา /p:PublishReadyToRun=true ออก ไฟล์จะเล็กลง (แต่น่าจะเริ่ม start ช้าลงด้วยมั้ง)
 dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=true
+
+Run Command prompt ที่ folder ที่มี csproj ได้เลยนะ
