@@ -118,7 +118,8 @@ namespace NetCheck
 		private void notifyIcon1_MouseDoubleClick(object sender, MouseEventArgs e)
 		{
 			//showConfigForm();
-			changeAdapterOptions();
+			if (e.Button == MouseButtons.Left)
+				changeAdapterOptions();
 		}
 		private void btSave_Click(object sender, EventArgs e)
 		{

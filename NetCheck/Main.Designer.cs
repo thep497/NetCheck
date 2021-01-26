@@ -42,10 +42,10 @@ namespace NetCheck
             this.mnuBlack = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuYellow = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.mnuShowLog = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.mnuExit = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuShowLog = new System.Windows.Forms.ToolStripMenuItem();
             this.lblStatus = new System.Windows.Forms.Label();
             this.notifyIcon1 = new System.Windows.Forms.NotifyIcon(this.components);
             this.pnlConfig = new System.Windows.Forms.Panel();
@@ -92,7 +92,7 @@ namespace NetCheck
             this.toolStripSeparator3,
             this.mnuExit});
             this.popupMenu.Name = "contextMenuStrip1";
-            this.popupMenu.Size = new System.Drawing.Size(251, 184);
+            this.popupMenu.Size = new System.Drawing.Size(251, 246);
             // 
             // mnuAppName
             // 
@@ -174,6 +174,20 @@ namespace NetCheck
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(247, 6);
             // 
+            // mnuShowLog
+            // 
+            this.mnuShowLog.Name = "mnuShowLog";
+            this.mnuShowLog.Size = new System.Drawing.Size(250, 28);
+            this.mnuShowLog.Text = "ShowLog";
+            this.mnuShowLog.Click += new System.EventHandler(this.mnuShowLog_Click);
+            // 
+            // mnuAbout
+            // 
+            this.mnuAbout.Name = "mnuAbout";
+            this.mnuAbout.Size = new System.Drawing.Size(250, 28);
+            this.mnuAbout.Text = "About";
+            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -186,20 +200,6 @@ namespace NetCheck
             this.mnuExit.Size = new System.Drawing.Size(250, 28);
             this.mnuExit.Text = "Exit";
             this.mnuExit.Click += new System.EventHandler(this.mnuExit_Click);
-            // 
-            // mnuAbout
-            // 
-            this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(250, 28);
-            this.mnuAbout.Text = "About";
-            this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
-            // 
-            // mnuShowLog
-            // 
-            this.mnuShowLog.Name = "mnuShowLog";
-            this.mnuShowLog.Size = new System.Drawing.Size(250, 28);
-            this.mnuShowLog.Text = "ShowLog";
-            this.mnuShowLog.Click += new System.EventHandler(this.mnuShowLog_Click);
             // 
             // lblStatus
             // 
@@ -433,7 +433,7 @@ namespace NetCheck
             this.cbSaveLog.AutoSize = true;
             this.cbSaveLog.Location = new System.Drawing.Point(190, 10);
             this.cbSaveLog.Name = "cbSaveLog";
-            this.cbSaveLog.Size = new System.Drawing.Size(100, 24);
+            this.cbSaveLog.Size = new System.Drawing.Size(113, 24);
             this.cbSaveLog.TabIndex = 2;
             this.cbSaveLog.Text = "Save log file";
             this.cbSaveLog.UseVisualStyleBackColor = true;

@@ -2,9 +2,11 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net5.0-windows</TargetFramework>
+    <TargetFrameworks>net5.0-windows;net35</TargetFrameworks>
     <UseWindowsForms>true</UseWindowsForms>
-    <ApplicationIcon>Resources\ethernet-on-64-b.ico</ApplicationIcon>
+	<AssemblyName Condition=" '$(TargetFramework)' == 'net35' ">NetCheckXP</AssemblyName>
+    <ApplicationIcon Condition=" '$(TargetFramework)' == 'net5.0-windows' ">Resources\ethernet-on-64-b.ico</ApplicationIcon>
+    <ApplicationIcon Condition=" '$(TargetFramework)' == 'net35' ">Resources\ethernet-on-64-y.ico</ApplicationIcon>
     <Authors>Amornthep L.</Authors>
     <Company>Neo-Net Soft</Company>
     <Version>1.0.1</Version>
@@ -16,6 +18,8 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 </Description>
+    <PackageId>NetCheck</PackageId>
+    <Product>NetCheck</Product>
   </PropertyGroup>
 
   <ItemGroup>
@@ -48,5 +52,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  
+  <ItemGroup Condition=" '$(TargetFramework)' == 'net35' ">
+	<Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Data.DataSetExtensions" />
+</ItemGroup>
 
 </Project>
