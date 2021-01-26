@@ -6,11 +6,12 @@
 //5. Create date:	20210121
 //6. Description:	Main popup menu and config form
 // *******************************************************************
-// Revision : 2
+// Revision : 3
 // Edit history
 // Rev 0: //th20210121 Initial this unit.
 // Rev 1: //th20210121 Fix small bugs.
 // Rev 2: //th20210125 เพิ่มการ save log
+// Rev 3: //th20210126 ใส่ image เข้าเมนู showlog และ clean resources files
 // *******************************************************************
 using System;
 using System.Drawing;
@@ -24,10 +25,10 @@ namespace NetCheck
 
     public partial class Main : Form
 	{
-		private NetworkStatus nwStatus = new NetworkStatus();
-		private AppConfig appConfig = new AppConfig();
+		private readonly NetworkStatus nwStatus = new NetworkStatus();
+		private readonly AppConfig appConfig = new AppConfig();
 		private bool _configDirty = false;
-		private Logger log;
+		private readonly Logger log;
 		private bool configDirty { get => _configDirty; set { _configDirty = lblDirty.Visible = value; } }
 
 		public Main()

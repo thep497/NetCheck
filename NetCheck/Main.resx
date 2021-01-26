@@ -152,6 +152,32 @@
         DVnAqEAigQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="mnuShowLog.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wQAADsEBuJFr7QAABLVJREFUeF7tm1GkVWkUx6/kSpIkSZIkSUZGkowxkqSHJD3MQ0/poYce5jE9RQ9j
+        ZCTJGCMZSeZhJEmSJElGkh6SJMkYSTKSjIyk+f3vXVvfXbPO2Xufs0/37O+eP790v/2tb6+1zj5n7+/7
+        1h7rpI/nxtbCYbgI1+EW/AF34R7cNx7AQ3iU8BieJDyFZz0i23QsjZ2eS+cX8kV+yb/bcBOuwgnYArMs
+        tO6i4wpQ0B8zQ0naamHGosN2eGMGOfIBjli4U8WBrfCvdcydHyzsSdGwBP5OOkQoe1V4X0Jk0xSR353Y
+        beFPJOCMO1igH5Y9sBwWGPNLmFtCZFOHwo+URcZiWArydxVsht8hiu1PGC8+fX0yvsNZGLcctVrEsRei
+        K2SPDu53jUK3lzlmn4WI56ckvoLzOvCzaxTfmV02IiZ9JXycT3Qg+v7vMLtsREyzwN/lnunAb65RbDO7
+        rERcb12cEwmIfiW3mE1WIq7XLs6JBFxwjeIbs8lKxPXKxTmRgOi5/yuzyUrEFSbgkmsUMyoBV1yj2Gg2
+        WYm4Xrg4OyZgg9lkJeIKE6BFg7RRrDebrERcYQKuuUaxzmyyEnE1nwD6zoFlsBrWwBewDr4cABpb6Dxa
+        uVpgblQS/ZtNAP22Qdk6wiDRLPawuVMq+oYJ0IJn2iiqJkCzRm/7udE0d5W51FX0CxNwwzWKtWbTUfTR
+        5GI6P/2UTeZWV9GvuQRI9Dvu7KYDrfZWWrihX+MJ0FWwD7TYcAp+NbSa1A/FOAUaW/wCWr84CT/CIVhs
+        7pSKvs0moG0irsoJWG02WYm4RglwcY4SMEoA/4wS4BrFKAFm01X0WwmaTmsfX4NrxUULj9ph1grsOyPd
+        GxTpLo0/pqVr2fwDGkfjaWzVIHxrp+5JNk4aZ98JiGwHiRK00k5fW9g2lwD66ClwOmoJdpkLtYVt41dA
+        NJMcJPpaLLPT1xa2jSdACyHn4A5oUpLWBvlan37RVn1fO1bYN5uAtom4Kicg18nQSxfnjEtAuDEykxLg
+        V7BmXALC7fGeF0XbJGJSgZYepNI4n+pA9hsjxKPqsagQ5FgrE4B/KurU2uFl0BWsr7Hqg30ts55NNIfw
+        l77QD+Ki1iUA374GfynXRZOxyUdq/tOqzVF8O+p87YVPu0n80artcXyLyvrqIPtPpfP80aoCCXw77Xyt
+        g+Yts22oSdHQqhIZfOtU11zGefj/DhKNrSqSwjd9it7fMhRjvH3GgVaVyeFbdD/vhm6VneueOdiqQkl8
+        61T+HtE9eIkOUUaHtlQW36IrNqI8eIlOrSqWxrfoR9tTLXiJjtF99YAdHjrhW/TkmlI9eInO0QsTlYsO
+        PrfwS8/83t8CXR3Vg5cw0Ds20bO1ChKmPjRMs+QPPDf/PLrV1Qu+EIad7q1a7d0BKknTlHIh6CUlvbyU
+        vgilUrnxADk8BTtlbWGr8Y5B5KfuDL1fsRjrLStfSx+hWVSKrpwmKLbQCrT+rylsitoinzQt7v9KZZCd
+        IGeikwwrqk2q9k5wFTHYbogWD4YNXX0Hze1mxcAqQ41miMPCX7Dd3B2cOIlqc78H3Xe1vKSq0Ka2vfwr
+        8SnFa/EeLW3pdf555mIDGhv7Dx/jSo5AIhDqAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="mnuExit.Image" type="System.Drawing.Bitmap, System.Drawing.Common" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO

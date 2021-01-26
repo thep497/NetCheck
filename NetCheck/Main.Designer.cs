@@ -176,6 +176,7 @@ namespace NetCheck
             // 
             // mnuShowLog
             // 
+            this.mnuShowLog.Image = ((System.Drawing.Image)(resources.GetObject("mnuShowLog.Image")));
             this.mnuShowLog.Name = "mnuShowLog";
             this.mnuShowLog.Size = new System.Drawing.Size(250, 28);
             this.mnuShowLog.Text = "ShowLog";

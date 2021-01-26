@@ -2,6 +2,14 @@
 dotnet publish -r win-x64 -c Release -f net5.0-windows /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=true /p:PublishReadyToRun=true
 
 ถ้าเอา /p:PublishReadyToRun=true ออก ไฟล์จะเล็กลง (แต่น่าจะเริ่ม start ช้าลงด้วยมั้ง)
-dotnet publish -r win-x64 -c Release /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=true
+dotnet publish -r win-x64 -c Release -f net5.0-windows /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true /p:PublishTrimmed=true
 
 Run Command prompt ที่ folder ที่มี csproj ได้เลยนะ
+
+*** ตอนนี้ (20210126) ใช้ไม่ได้แล้ว ติด error (หลังจากรวม framework และต้องใส่ -f net5.0-windows )
+C:\Program Files\dotnet\sdk\5.0.102\Microsoft.Common.CurrentVersion.targets(3075,5): 
+error MSB3554: Cannot write to the output file "D:\Programming\PrivateProjects\Win10Network\NetCheck\NetCheck\obj\Release\net5.0-windows\win-x64\NetCheck.Properties.Resources.resources". 
+Could not find a part of the path 'D:\Programming\PrivateProjects\Win10Network\NetCheck\NetCheck\Properties\'. 
+[D:\Programming\PrivateProjects\Win10Network\NetCheck\NetCheck\NetCheck.csproj]
+
+ยังหาทางแก้ไม่ได้ ให้ Publish ผ่าน IDE ไปก่อน

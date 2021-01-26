@@ -91,16 +91,6 @@ namespace NetCheck.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap data_configuration_64 {
-            get {
-                object obj = ResourceManager.GetObject("data-configuration-64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
         internal static System.Drawing.Icon Disconnected {
@@ -127,36 +117,6 @@ namespace NetCheck.Properties {
             get {
                 object obj = ResourceManager.GetObject("DisconnectedW", resourceCulture);
                 return ((System.Drawing.Icon)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap ethernet_on_64 {
-            get {
-                object obj = ResourceManager.GetObject("ethernet-on-64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap exit_64 {
-            get {
-                object obj = ResourceManager.GetObject("exit_64", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap network_64_1_ {
-            get {
-                object obj = ResourceManager.GetObject("network-64(1)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
             }
         }
     }
